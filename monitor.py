@@ -2,12 +2,12 @@ from selenium import webdriver
 import time
 import yagmail
 
-EMAIL = "email.example@gmail.com"
-PASSWORD = "your_password"
-DESTINATION = "destination@example.com"
+EMAIL = "test@gmail.com"
+PASSWORD = "******** "
+DESTINATION = "test@gmail.com"
 
-driver = webdriver.Chrome()
-driver.get("https://www.example.com/product-page")
+driver = webdriver.Firefox()
+driver.get("https://www.youtube.com/")
 
 print("Page opened! Starting monitoring.")
 
@@ -20,9 +20,9 @@ end_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 end_timestamp = time.time()
 
 driver.quit()
-elapsed_time = end_timestamp - start_timestamp
+elapsed_time = round((end_timestamp - start_timestamp) / 60, 2)
 
-message =(f"Time elapsed: {elapsed_time} seconds"
+message =(f"Time elapsed: {elapsed_time} minutes"
       f"\nStart time: {start_time}"
       f"\nEnd time: {end_time}"
       f"\nActive time: {elapsed_time}")
